@@ -8,6 +8,11 @@ jobs:
   static-analysis:
     runs-on: self-hosted
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
       - name: Checkout
         uses: "actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0"
       - name: Static Analysis
@@ -16,6 +21,11 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
       - name: Checkout
         uses: "actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0"
       - name: Build
@@ -24,6 +34,11 @@ jobs:
   unit-tests:
     runs-on: self-hosted
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
       - name: Checkout
         uses: "actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0"
       - name: Unit Tests
@@ -33,6 +48,11 @@ jobs:
     runs-on: self-hosted
     environment: AF_XDP CI
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
       - name: Checkout
         uses: "actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0"
       - name: Delete previous logs

@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /pkg/goclient
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /pkg/subfunctions
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /test/e2e
+    schedule:
+      interval: daily
